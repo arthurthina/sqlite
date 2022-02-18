@@ -22,7 +22,7 @@ df2 <- data.frame(car,make)
 
 dfList <- list(df1,df2)
 
-# Write a table by appending the data frames inside the list
+
 for(k in 1:length(dfList)){
   dbWriteTable(conn,"Cars_and_Makes", dfList[[k]], append = TRUE)
 }
@@ -31,4 +31,4 @@ dbListTables(conn)
 
 dbGetQuery(conn, "SELECT * FROM Cars_and_Makes")
 
-dbGetQuery(conn, "SELECT * FROM cars_data LIMIT 10")
+test <- dbGetQuery(conn, "SELECT * FROM cars_data")
